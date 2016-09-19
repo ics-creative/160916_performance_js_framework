@@ -3,3 +3,4 @@ node_modules
 *.map
 angular2/app/*.js
 .DS_Store
+/angular2-svg/app/*.js
