@@ -1,5 +1,4 @@
 // 必要なJSファイルを読み込んでおく
-
 declare function require(string):any;
 require('../node_modules/core-js/client/shim.min.js');
 require('../node_modules/zone.js/dist/zone.js');

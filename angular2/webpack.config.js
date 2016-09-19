@@ -10,7 +10,7 @@ module.exports = [
       extensions: ['', '.ts', '.js']
     },
     plugins: [
-      // new webpack.optimize.UglifyJsPlugin() // minify enabled
+      new webpack.optimize.UglifyJsPlugin() // minify enabled
     ],
     module: {
       loaders: [
