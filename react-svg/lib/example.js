@@ -69,7 +69,7 @@ var ParticleBox = function (_React$Component) {
 
     _this.state = {
       particles: [],
-      emitOnFrame: 1
+      emitOnFrame: 3
     };
     _this.count = 0;
 

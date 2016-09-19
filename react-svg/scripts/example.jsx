@@ -48,7 +48,7 @@ class ParticleBox extends React.Component {
     super(props);
     this.state = {
       particles: [],
-      emitOnFrame: 1
+      emitOnFrame: 3
     };
     this.count = 0;
 

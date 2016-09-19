@@ -28,7 +28,7 @@ import {ParticleData} from "./particle-data";
 export class AppComponent {
 
   particles:ParticleData[] = [];
-  emitOnFrame = 2;
+  emitOnFrame = 3;
   innerWidth = 0;
   innerHeight = 0;
 
