@@ -101,16 +101,18 @@ class ParticleBox extends React.Component {
   render() {
 
     const nodes = this.state.particles.map((particle) =>
-      <ParticleObj particle={particle}
-                   key={particle.key}>
-      </ParticleObj>
+      <circle key={particle.key}
+              cx={particle.x}
+              cy={particle.y}
+              r="3">
+      </circle>
     );
 
     return (
       <div>
-        <div>
+        <svg width={window.innerWidth} height={window.innerHeight}>
           {nodes}
-        </div>
+        </svg>
         <div className="ui">
           <p>Emit Particle Per 1 Frame</p>
           <input type="range"
@@ -127,15 +129,6 @@ class ParticleBox extends React.Component {
           <p>現在のパーティクル数 : {this.state.particles.length} 個</p>
         </div>
       </div>
-    );
-  }
-}
-
-class ParticleObj extends React.Component {
-  render() {
-    return (
-      <div className="particle" style={{top: this.props.particle.y + "px", left: this.props.particle.x + "px"}}>
-        😊</div>
     );
   }
 }
