@@ -48,7 +48,7 @@ class ParticleBox extends React.Component {
     super(props);
     this.state = {
       particles: [],
-      emitOnFrame: 1
+      emitOnFrame: 3
     };
     this.count = 0;
 
@@ -68,9 +68,9 @@ class ParticleBox extends React.Component {
     const len = Number(this.state.emitOnFrame);
     for (let i = 0; i < len; i++) {
       this.state.particles.push(new ParticleData(
-          innerWidth / 2,
-          innerHeight / 4,
-          this.count++));
+        innerWidth / 2,
+        innerHeight / 4,
+        this.count++));
     }
 
     // 更新
@@ -99,45 +99,34 @@ class ParticleBox extends React.Component {
   }
 
   render() {
-    return (
-        <div>
-          <ParticleList particles={this.state.particles}/>
-          <div className="ui">
-            <p>Emit Particle Per 1 Frame</p>
-            <input type="range"
-                   name="emitOnFrame"
-                   value={this.state.emitOnFrame}
-                   min="1" max="30"
-                   onChange={this.handleChange}/>
-            <input type="number"
-                   name="emitOnFrame"
-                   value={this.state.emitOnFrame}
-                   min="1" max="30"
-                   onChange={this.handleChange}/>
 
-            <p>現在のパーティクル数 : {this.state.particles.length} 個</p>
-          </div>
-        </div>
+    const nodes = this.state.particles.map((particle) =>
+      <ParticleObj particle={particle}
+                   key={particle.key}>
+      </ParticleObj>
     );
-  }
-}
-
-
-class ParticleList extends React.Component {
-  render() {
-    const nodes = this.props.particles.map(function (particle) {
-
-      return (
-          <ParticleObj particle={particle}
-                       key={particle.key}>
-          </ParticleObj>
-      );
-    });
 
     return (
+      <div>
         <div>
           {nodes}
         </div>
+        <div className="ui">
+          <p>Emit Particle Per 1 Frame</p>
+          <input type="range"
+                 name="emitOnFrame"
+                 value={this.state.emitOnFrame}
+                 min="1" max="30"
+                 onChange={this.handleChange}/>
+          <input type="number"
+                 name="emitOnFrame"
+                 value={this.state.emitOnFrame}
+                 min="1" max="30"
+                 onChange={this.handleChange}/>
+
+          <p>現在のパーティクル数 : {this.state.particles.length} 個</p>
+        </div>
+      </div>
     );
   }
 }
@@ -145,13 +134,13 @@ class ParticleList extends React.Component {
 class ParticleObj extends React.Component {
   render() {
     return (
-        <div className="particle" style={{top: this.props.particle.y + "px", left: this.props.particle.x + "px"}}>
-          😊</div>
+      <div className="particle" style={{top: this.props.particle.y + "px", left: this.props.particle.x + "px"}}>
+        😊</div>
     );
   }
 }
 
 ReactDOM.render(
-    <ParticleBox />,
-    document.getElementById('content')
+  <ParticleBox />,
+  document.getElementById('content')
 );

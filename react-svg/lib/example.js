@@ -131,19 +131,16 @@ var ParticleBox = function (_React$Component) {
     value: function render() {
 
       var nodes = this.state.particles.map(function (particle) {
-
-        return React.createElement("circle", { key: particle.key,
-          cx: particle.x,
-          cy: particle.y,
-          r: "3" });
+        return React.createElement(ParticleObj, { particle: particle,
+          key: particle.key });
       });
 
       return React.createElement(
         "div",
         null,
         React.createElement(
-          "svg",
-          { width: window.innerWidth, height: window.innerHeight },
+          "div",
+          null,
           nodes
         ),
         React.createElement(
@@ -177,6 +174,29 @@ var ParticleBox = function (_React$Component) {
   }]);
 
   return ParticleBox;
+}(React.Component);
+
+var ParticleObj = function (_React$Component2) {
+  _inherits(ParticleObj, _React$Component2);
+
+  function ParticleObj() {
+    _classCallCheck(this, ParticleObj);
+
+    return _possibleConstructorReturn(this, (ParticleObj.__proto__ || Object.getPrototypeOf(ParticleObj)).apply(this, arguments));
+  }
+
+  _createClass(ParticleObj, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "particle", style: { top: this.props.particle.y + "px", left: this.props.particle.x + "px" } },
+        "😊"
+      );
+    }
+  }]);
+
+  return ParticleObj;
 }(React.Component);
 
 ReactDOM.render(React.createElement(ParticleBox, null), document.getElementById('content'));

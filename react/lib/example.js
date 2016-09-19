@@ -69,7 +69,7 @@ var ParticleBox = function (_React$Component) {
 
     _this.state = {
       particles: [],
-      emitOnFrame: 1
+      emitOnFrame: 3
     };
     _this.count = 0;
 
@@ -129,10 +129,20 @@ var ParticleBox = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+
+      var nodes = this.state.particles.map(function (particle) {
+        return React.createElement(ParticleObj, { particle: particle,
+          key: particle.key });
+      });
+
       return React.createElement(
         "div",
         null,
-        React.createElement(ParticleList, { particles: this.state.particles }),
+        React.createElement(
+          "div",
+          null,
+          nodes
+        ),
         React.createElement(
           "div",
           { className: "ui" },
@@ -166,37 +176,8 @@ var ParticleBox = function (_React$Component) {
   return ParticleBox;
 }(React.Component);
 
-var ParticleList = function (_React$Component2) {
-  _inherits(ParticleList, _React$Component2);
-
-  function ParticleList() {
-    _classCallCheck(this, ParticleList);
-
-    return _possibleConstructorReturn(this, (ParticleList.__proto__ || Object.getPrototypeOf(ParticleList)).apply(this, arguments));
-  }
-
-  _createClass(ParticleList, [{
-    key: "render",
-    value: function render() {
-      var nodes = this.props.particles.map(function (particle) {
-
-        return React.createElement(ParticleObj, { particle: particle,
-          key: particle.key });
-      });
-
-      return React.createElement(
-        "div",
-        null,
-        nodes
-      );
-    }
-  }]);
-
-  return ParticleList;
-}(React.Component);
-
-var ParticleObj = function (_React$Component3) {
-  _inherits(ParticleObj, _React$Component3);
+var ParticleObj = function (_React$Component2) {
+  _inherits(ParticleObj, _React$Component2);
 
   function ParticleObj() {
     _classCallCheck(this, ParticleObj);

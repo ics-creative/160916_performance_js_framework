@@ -26,7 +26,7 @@ import {ParticleData} from "./particle-data";
 export class AppComponent {
 
   particles: ParticleData[] = [];
-  emitOnFrame = 10;
+  emitOnFrame = 3;
 
   ngOnInit() {
     requestAnimationFrame(() => {
