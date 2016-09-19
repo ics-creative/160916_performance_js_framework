@@ -1,0 +1,5 @@
+.idea
+node_modules
+*.map
+angular2/app/*.js
+.DS_Store
