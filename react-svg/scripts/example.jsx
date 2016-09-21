@@ -48,12 +48,14 @@ class ParticleBox extends React.Component {
     super(props);
     this.state = {
       particles: [],
-      emitOnFrame: 3
+      emitOnFrame: 3,
+      enableRandomUpdate : false
     };
     this.count = 0;
 
     // React の実にイケてないところ
     this.handleChange = this.handleChange.bind(this);
+    this.handleEnableRandomCheck = this.handleEnableRandomCheck.bind(this);
   }
 
   componentDidMount() {
@@ -75,7 +77,17 @@ class ParticleBox extends React.Component {
 
     // 更新
     this.state.particles.forEach((particle, index) => {
-      particle.update();
+
+      // ランダムアップデートが有効の場合は
+      if (this.state.enableRandomUpdate == true) {
+        // 50%の確率で更新する
+        if (Math.random() < 0.5) {
+          particle.update();
+        }
+      } else {
+        // ランダムアップデートが無効の場合は常にアップデートする
+        particle.update();
+      }
 
       // 寿命の判定
       if (particle.life <= 0) {
@@ -96,6 +108,10 @@ class ParticleBox extends React.Component {
     // キャストしないとエラーになる
     const num = Number(e.currentTarget.value);
     this.setState({emitOnFrame: num});
+  }
+
+  handleEnableRandomCheck(e){
+    this.setState({enableRandomUpdate: e.currentTarget.checked});
   }
 
   render() {
@@ -127,6 +143,12 @@ class ParticleBox extends React.Component {
                  onChange={this.handleChange}/>
 
           <p>現在のパーティクル数 : {this.state.particles.length} 個</p>
+          <label>ランダム更新
+            <input type="checkbox"
+                   checked={this.state.enableRandomUpdate}
+                   onChange={this.handleEnableRandomCheck} />
+          </label>
+
         </div>
       </div>
     );

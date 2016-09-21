@@ -22,6 +22,9 @@ import {ParticleData} from "./particle-data";
                 [(ngModel)]="emitOnFrame"
                 min="1" max="30" />
               <p>現在のパーティクル数 :  {{particles.length}} 個</p>
+              <label>ランダム更新
+                <input type="checkbox" [(ngModel)]="enableRandomUpdate" />
+              </label>
             </div>`,
   styles: [`.ui {position: absolute; top: 10px; right: 10px;}`]
 })
@@ -31,6 +34,7 @@ export class AppComponent {
   emitOnFrame = 3;
   innerWidth = 0;
   innerHeight = 0;
+  enableRandomUpdate = false;
 
   ngOnInit() {
     requestAnimationFrame(() => {
@@ -49,7 +53,17 @@ export class AppComponent {
 
     // 更新
     this.particles.forEach((particle, index) => {
-      particle.update();
+
+      // ランダムアップデートが有効の場合は
+      if (this.enableRandomUpdate === true) {
+        // 50%の確率で更新する
+        if (Math.random() < 0.5) {
+          particle.update();
+        }
+      } else {
+        // ランダムアップデートが無効の場合は常にアップデートする
+        particle.update();
+      }
 
       // 寿命の判定
       if (particle.life <= 0) {
