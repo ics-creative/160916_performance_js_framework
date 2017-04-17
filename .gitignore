@@ -1,8 +1,5 @@
 .idea
 node_modules
-*.map
-angular2/app/*.js
 .DS_Store
-/angular2-svg/app/*.js
-/react/npm-debug.log
-/react-svg/npm-debug.log
+npm-debug.log
+*.map
