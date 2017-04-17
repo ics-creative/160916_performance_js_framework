@@ -6,9 +6,9 @@
 https://ics-creative.github.io/160916_performance_js_framework/react-svg/index.html
 
 ### Angular Demo
-https://ics-creative.github.io/160916_performance_js_framework/angular-svg/index.html
+https://ics-creative.github.io/160916_performance_js_framework/angular-svg/dist/index.html
 
-### Vue.js 
+### Vue.js
 https://ics-creative.github.io/160916_performance_js_framework/vue-svg/index.html
 
 
@@ -18,7 +18,7 @@ https://ics-creative.github.io/160916_performance_js_framework/vue-svg/index.htm
 https://ics-creative.github.io/160916_performance_js_framework/react/index.html
 
 ### Angular Demo
-https://ics-creative.github.io/160916_performance_js_framework/angular/index.html
+https://ics-creative.github.io/160916_performance_js_framework/angular/dist/index.html
 
-### Vue.js 
+### Vue.js
 https://ics-creative.github.io/160916_performance_js_framework/vue/index.html
