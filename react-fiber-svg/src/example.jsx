@@ -99,7 +99,7 @@ class ParticleBox extends React.Component {
       }
     });
 
-    // React Fiberunstable_deferredUpdatesによる更新指定
+    // React Fiber : unstable_deferredUpdates による更新指定
     ReactDOM.unstable_deferredUpdates(() => {
       // 更新
       this.setState({particles: this.state.particles});

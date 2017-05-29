@@ -2081,15 +2081,20 @@ var ParticleBox = function (_React$Component) {
         }
       });
 
-      // React Fiberunstable_deferredUpdatesによる更新指定
+      // React Fiber : unstable_deferredUpdates による更新指定
       _reactDom2.default.unstable_deferredUpdates(function () {
+        console.log("update", new Date());
         // 更新
         _this3.setState({ particles: _this3.state.particles });
       });
 
-      requestAnimationFrame(function () {
+      setTimeout(function () {
         _this3.tick();
-      });
+      }, 30);
+      //
+      //    requestAnimationFrame(() => {
+      //      this.tick();
+      //    });
     }
   }, {
     key: 'handleChange',
