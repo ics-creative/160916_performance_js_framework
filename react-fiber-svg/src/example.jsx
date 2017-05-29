@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 
 const MAX_LIFE = 60; // 寿命の最大値
 
@@ -82,7 +82,7 @@ class ParticleBox extends React.Component {
     this.state.particles.forEach((particle, index) => {
 
       // ランダムアップデートが有効の場合は
-      if (this.state.enableRandomUpdate == true) {
+      if (this.state.enableRandomUpdate === true) {
         // 50%の確率で更新する
         if (Math.random() < 0.5) {
           particle.update();
@@ -99,8 +99,11 @@ class ParticleBox extends React.Component {
       }
     });
 
-    // 更新
-    this.setState({particles: this.state.particles});
+    // React Fiberunstable_deferredUpdatesによる更新指定
+    ReactDOM.unstable_deferredUpdates(() => {
+      // 更新
+      this.setState({particles: this.state.particles});
+    });
 
     requestAnimationFrame(() => {
       this.tick();
@@ -118,7 +121,6 @@ class ParticleBox extends React.Component {
   }
 
   render() {
-
     const nodes = this.state.particles.map((particle) =>
       <circle key={particle.key}
               cx={particle.x}
@@ -158,7 +160,7 @@ class ParticleBox extends React.Component {
   }
 }
 
-render(
+ReactDOM.render(
   <ParticleBox />,
   document.getElementById('content')
 );

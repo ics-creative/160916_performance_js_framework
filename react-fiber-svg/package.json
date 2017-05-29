@@ -10,7 +10,7 @@
     "webpack": "^2.6.1"
   },
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "16",
+    "react-dom": "16"
   }
 }
