@@ -3,3 +3,4 @@ node_modules
 .DS_Store
 npm-debug.log
 *.map
+/react-fiber-svg/package-lock.json
