@@ -9,7 +9,7 @@ https://ics-creative.github.io/160916_performance_js_framework/react-svg/index.h
 https://ics-creative.github.io/160916_performance_js_framework/angular-svg/dist/angular-performance-svg/index.html
 
 ### Vue.js
-https://ics-creative.github.io/160916_performance_js_framework/vue-svg/index.html
+https://ics-creative.github.io/160916_performance_js_framework/vue-svg/dist/index.html
 
 
 ## DOM Version
