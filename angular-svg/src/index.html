@@ -1,17 +1,19 @@
 <!doctype html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Angular Performance</title>
+  <title>AngularPerformanceSvg</title>
+  <base href="./">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
 
   <script>
     // FPS 計測用モジュールの配置
     (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
   </script>
-</head>
-<body>
-  <app-root>Loading...</app-root>
 </body>
 </html>

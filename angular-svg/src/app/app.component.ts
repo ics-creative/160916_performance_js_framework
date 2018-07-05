@@ -6,31 +6,8 @@ import {ParticleData} from './particle-data';
  */
 @Component({
   selector: 'app-root',
-  template: `
-    <svg [attr.width]="innerWidth" [attr.height]="innerHeight">
-      <circle *ngFor="let particle of particles"
-              [attr.cx]="particle.x"
-              [attr.cy]="particle.y"
-              r="3"></circle>
-    </svg>
-    <div class="ui">
-      <p>Emit Particle Per 1 Frame</p>
-      <input type="range"
-             [(ngModel)]="emitOnFrame"
-             min="1" max="30"/>
-      <input type="number"
-             [(ngModel)]="emitOnFrame"
-             min="1" max="30"/>
-      <p>現在のパーティクル数 : {{particles.length}} 個</p>
-      <label>ランダム更新
-        <input type="checkbox" [(ngModel)]="enableRandomUpdate"/>
-      </label>
-    </div>`,
-  styles: [`.ui {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }`]
+  templateUrl:`app.component.html`,
+  styleUrls: [`app.component.css`]
 })
 export class AppComponent {
 

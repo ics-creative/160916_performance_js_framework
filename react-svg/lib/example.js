@@ -183,14 +183,14 @@ var ParticleBox = function (_React$Component) {
           React.createElement(
             "p",
             null,
-            "現在のパーティクル数 : ",
+            "\u73FE\u5728\u306E\u30D1\u30FC\u30C6\u30A3\u30AF\u30EB\u6570 : ",
             this.state.particles.length,
-            " 個"
+            " \u500B"
           ),
           React.createElement(
             "label",
             null,
-            "ランダム更新",
+            "\u30E9\u30F3\u30C0\u30E0\u66F4\u65B0",
             React.createElement("input", { type: "checkbox",
               checked: this.state.enableRandomUpdate,
               onChange: this.handleEnableRandomCheck })

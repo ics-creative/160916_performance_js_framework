@@ -164,9 +164,9 @@ var ParticleBox = function (_React$Component) {
           React.createElement(
             "p",
             null,
-            "現在のパーティクル数 : ",
+            "\u73FE\u5728\u306E\u30D1\u30FC\u30C6\u30A3\u30AF\u30EB\u6570 : ",
             this.state.particles.length,
-            " 個"
+            " \u500B"
           )
         )
       );
@@ -191,7 +191,7 @@ var ParticleObj = function (_React$Component2) {
       return React.createElement(
         "div",
         { className: "particle", style: { top: this.props.particle.y + "px", left: this.props.particle.x + "px" } },
-        "😊"
+        "\uD83D\uDE0A"
       );
     }
   }]);
