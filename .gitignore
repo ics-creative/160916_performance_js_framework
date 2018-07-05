@@ -1,6 +1,8 @@
 .idea
 node_modules
 .DS_Store
+Thumbs.db
 npm-debug.log
 *.map
-/react-fiber-svg/package-lock.json
+package-lock.json
+yarn.lock
