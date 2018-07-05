@@ -134,12 +134,12 @@ class ParticleBox extends React.Component {
           <input type="range"
                  name="emitOnFrame"
                  value={this.state.emitOnFrame}
-                 min="1" max="30"
+                 min="1" max="50"
                  onChange={this.handleChange}/>
           <input type="number"
                  name="emitOnFrame"
                  value={this.state.emitOnFrame}
-                 min="1" max="30"
+                 min="1" max="50"
                  onChange={this.handleChange}/>
 
           <p>現在のパーティクル数 : {this.state.particles.length} 個</p>

@@ -1,4 +1,4 @@
-# Performance React v15.5 vs Angular 4 vs Vue.js 2.2
+# Performance React v16 vs Angular 6 vs Vue.js 2.5
 
 ## SVG Version
 
@@ -18,7 +18,7 @@ https://ics-creative.github.io/160916_performance_js_framework/vue-svg/index.htm
 https://ics-creative.github.io/160916_performance_js_framework/react/index.html
 
 ### Angular Demo
-https://ics-creative.github.io/160916_performance_js_framework/angular/dist/index.html
+https://ics-creative.github.io/160916_performance_js_framework/angular/dist/angular-dom/index.html
 
 ### Vue.js
 https://ics-creative.github.io/160916_performance_js_framework/vue/index.html

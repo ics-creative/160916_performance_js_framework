@@ -1,0 +1,15 @@
+<app-particle
+  *ngFor="let particle of particles"
+  [particle]="particle" >
+</app-particle>
+<div class="ui">
+  <p>Emit Particle Per 1 Frame</p>
+  <input type="range"
+         [(ngModel)]="emitOnFrame"
+         min="1" max="30" />
+  <input type="number"
+         [(ngModel)]="emitOnFrame"
+         min="1" max="30" />
+
+  <p>現在のパーティクル数 :  {{particles.length}} 個</p>
+</div>

@@ -1,5 +1,3 @@
-'use strict';
-
 const MAX_LIFE = 60; // 寿命の最大値
 
 /**
@@ -59,10 +57,10 @@ Vue.component('MyApp', {
         <p>Emit Particle Per 1 Frame</p>
           <input type="range" 
                  v-model="emitOnFrame"
-                 min="1" max="30" />
+                 min="1" max="50" />
           <input type="number"
                  v-model="emitOnFrame"
-                 min="1" max="30" /> 
+                 min="1" max="50" /> 
         <p>現在のパーティクル数 :  {{particles.length}} 個</p>
       </div>
     </div>`
