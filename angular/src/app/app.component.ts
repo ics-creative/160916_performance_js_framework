@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ParticleData} from './particle-data';
+import { Component, Input, OnInit } from '@angular/core';
+import { ParticleData } from './particle-data';
 
 /**
  * メインのコンポーネントです。
@@ -7,7 +7,7 @@ import {ParticleData} from './particle-data';
 @Component({
   selector: 'app-root',
   templateUrl: `app.component.html`,
-  styleUrls: [`app.component.css`]
+  styleUrls: [`app.component.css`],
 })
 export class AppComponent implements OnInit {
 
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
   styles: [`div {
     position: absolute;
     font-size: 2rem;
-  }`]
+  }`],
 })
 export class ParticleComponent {
   @Input() particle: ParticleData;
