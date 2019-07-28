@@ -11,6 +11,8 @@ https://ics-creative.github.io/160916_performance_js_framework/angular-svg/dist/
 ### Vue.js
 https://ics-creative.github.io/160916_performance_js_framework/vue-svg/dist/index.html
 
+### Vanilla JS
+https://ics-creative.github.io/160916_performance_js_framework/vanillajs-svg
 
 ## DOM Version
 
