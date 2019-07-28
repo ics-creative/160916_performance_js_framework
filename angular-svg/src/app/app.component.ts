@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import {ParticleData} from './particle-data';
 
 /**
@@ -9,13 +9,12 @@ import {ParticleData} from './particle-data';
   templateUrl: `app.component.html`,
   styleUrls: [`app.component.css`]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   particles: ParticleData[] = [];
   emitOnFrame = 3;
   innerWidth = 0;
   innerHeight = 0;
-  enableRandomUpdate = false;
 
   ngOnInit() {
     requestAnimationFrame(() => {
@@ -35,16 +34,8 @@ export class AppComponent {
     // 更新
     this.particles.forEach((particle, index) => {
 
-      // ランダムアップデートが有効の場合は
-      if (this.enableRandomUpdate === true) {
-        // 50%の確率で更新する
-        if (Math.random() < 0.5) {
-          particle.update();
-        }
-      } else {
-        // ランダムアップデートが無効の場合は常にアップデートする
-        particle.update();
-      }
+      // アップデートする
+      particle.update();
 
       // 寿命の判定
       if (particle.life <= 0) {
