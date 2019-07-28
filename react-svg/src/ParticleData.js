@@ -1,9 +1,9 @@
-export const MAX_LIFE = 60; // 寿命の最大値
+const MAX_LIFE = 60; // 寿命の最大値
 
 /**
  * パーティクルの座標情報を管理するクラスです。
  */
-export class ParticleData {
+export default class ParticleData {
   constructor($x, $y, $key) {
     this.x = $x;
     this.y = $y;
@@ -11,7 +11,6 @@ export class ParticleData {
     this.vx = 0;
     this.vy = 0;
     this.life = 0;
-    // 整数座標を保持
     this.displayX = Math.round(this.x);
     this.displayY = Math.round(this.y);
 
@@ -32,13 +31,14 @@ export class ParticleData {
     // 速度を位置に適用
     this.x += this.vx;
     this.y += this.vy;
+
     // 整数座標を保持
     this.displayX = Math.round(this.x);
     this.displayY = Math.round(this.y);
 
     // 地面の跳ね返り処理
-    if (this.y > innerHeight) {
-      this.y = innerHeight; // 行き過ぎ補正
+    if (this.y > window.innerHeight) {
+      this.y = window.innerHeight; // 行き過ぎ補正
       this.vy *= -1; // Y軸の速度を反転
     }
 

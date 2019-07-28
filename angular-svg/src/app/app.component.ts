@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import {ParticleData} from './particle-data';
+import { Component, OnInit } from '@angular/core';
+import { ParticleData } from './particle-data';
 
 /**
  * メインのコンポーネントです。

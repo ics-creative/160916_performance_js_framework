@@ -2,11 +2,11 @@
   <div>
     <svg v-bind:width="innerWidth"
          v-bind:height="innerHeight">
-      <my-particle
+      <ParticleComponent
         v-for="particle in particles"
         v-bind:key="particle.key"
         v-bind:particle="particle">
-      </my-particle>
+      </ParticleComponent>
     </svg>
     <div class="ui">
       <p>Emit Particle Per 1 Frame</p>
@@ -22,22 +22,22 @@
 </template>
 
 <script>
-  import {ParticleData} from "./ParticleData";
-  import MyParticle from "./components/MyParticle.vue";
+  import {ParticleData} from '../ParticleData';
+  import ParticleComponent from './ParticleComponent.vue';
 
 
+  let count = 0;
   export default {
-    name: "app",
+    name: 'AppComponent',
     components: {
-      MyParticle
+      ParticleComponent,
     },
     data: function () {
       return {
         particles: [],
         emitOnFrame: 3,
-        count: 0,
         innerWidth: 0,
-        innerHeight: 0
+        innerHeight: 0,
       };
     },
     mounted: function () {
@@ -50,33 +50,40 @@
       },
       /** エンターフレームイベントです。 */
       tick: function () {
+
+        const particles = this.particles.concat();
         // 発生
         const len = Number(this.emitOnFrame);
         for (let i = 0; i < len; i++) {
-          this.particles.push(new ParticleData(
+          particles.push(new ParticleData(
             innerWidth / 2,
             innerHeight / 4,
-            this.count++));
+            count++));
         }
 
         // 更新
-        this.particles.forEach((particle, index) => {
+        particles.forEach((particle, index) => {
           particle.update();
 
           // 寿命の判定
           if (particle.life <= 0) {
             // 配列からも削除
-            this.particles.splice(index, 1);
+            particles.splice(index, 1);
           }
-        })
-        ;
+        });
 
-        this.innerWidth = window.innerWidth;
-        this.innerHeight = window.innerHeight;
+        if(this.innerWidth !== window.innerWidth){
+          this.innerWidth = window.innerWidth;
+        }
+        if(this.innerHeight !== window.innerHeight){
+          this.innerHeight = window.innerHeight;
+        }
+        this.particles = particles;
 
+        // setTimeout(()=>{this.tick()}, 1000);
         requestAnimationFrame(this.tick);
-      }
-    }
+      },
+    },
   };
 </script>
 

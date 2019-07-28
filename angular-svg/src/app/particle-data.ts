@@ -7,6 +7,8 @@ export class ParticleData {
   vx = 0.0;
   vy = 0.0;
   life = 0.0;
+  displayX = 0;
+  displayY = 0;
 
   constructor(public x: number, public y: number) {
     // 動的にプロパティーを追加します。
@@ -15,6 +17,9 @@ export class ParticleData {
     this.vy = 30 * (Math.random() - 0.5);
     // 寿命
     this.life = ParticleData.MAX_LIFE;
+
+    this.displayX = Math.round(this.x);
+    this.displayY = Math.round(this.y);
   }
 
   update() {
@@ -26,6 +31,10 @@ export class ParticleData {
     // 速度を位置に適用
     this.x += this.vx;
     this.y += this.vy;
+
+    // 整数座標を保持
+    this.displayX = Math.round(this.x);
+    this.displayY = Math.round(this.y);
 
     // 地面の跳ね返り処理
     if (this.y > innerHeight) {

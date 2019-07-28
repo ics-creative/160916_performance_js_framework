@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import { ParticleComponent } from './particle/particle.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParticleComponent
   ],
   imports: [
     BrowserModule,

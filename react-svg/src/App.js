@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ParticleData from './Particle.js';
+import ParticleData from './ParticleData.js';
+import Particle from './Particle';
 
-
+let count = 0;
 export default class App extends Component {
 
   constructor(props) {
@@ -10,7 +11,6 @@ export default class App extends Component {
       particles: [],
       emitOnFrame: 3,
     };
-    this.count = 0;
 
     // React の実にイケてないところ
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +32,7 @@ export default class App extends Component {
       particles.push(new ParticleData(
         window.innerWidth / 2,
         window.innerHeight / 4,
-        this.count++));
+        count++));
     }
 
     // 更新
@@ -69,11 +69,7 @@ export default class App extends Component {
   render() {
 
     const nodes = this.state.particles.map((particle) =>
-      <circle key={particle.key}
-              cx={particle.x}
-              cy={particle.y}
-              r="3">
-      </circle>,
+      <Particle key={particle.key} particle={particle} />
     );
 
     return (
