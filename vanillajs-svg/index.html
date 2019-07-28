@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="google" content="notranslate" />
+  <title>Vanilla JS App</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #mySvg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ui {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+  <script src="js/index.js" type="module"></script>
+</head>
+<body>
+  <svg id="mySvg">
+  </svg>
+  <div class="ui">
+    <p>Emit Particle Per 1 Frame</p>
+    <input type="range"
+           name="emitOnFrame"
+           id="rangeEmitOnFrame"
+           min="1" max="50" />
+    <input type="number"
+           name="emitOnFrame"
+           id="inputEmitOnFrame"
+           min="1" max="50" />
+
+    <p>現在のパーティクル数 : <span id="numParticles"></span> 個</p>
+
+  </div>
+</body>
+</html>
