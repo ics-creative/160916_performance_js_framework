@@ -9,7 +9,13 @@ https://ics-creative.github.io/160916_performance_js_framework/react-svg/build/i
 https://ics-creative.github.io/160916_performance_js_framework/angular-svg/dist/angular-performance-svg/index.html
 
 ### Vue.js
+Normal
+
 https://ics-creative.github.io/160916_performance_js_framework/vue-svg/dist/index.html
+
+Functional Component
+
+https://ics-creative.github.io/160916_performance_js_framework/vue-svg-functional/dist/index.html
 
 ### Vanilla JS
 https://ics-creative.github.io/160916_performance_js_framework/vanillajs-svg
