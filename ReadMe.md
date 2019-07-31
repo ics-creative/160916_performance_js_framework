@@ -29,4 +29,4 @@ https://ics-creative.github.io/160916_performance_js_framework/react-dom/build/i
 https://ics-creative.github.io/160916_performance_js_framework/angular-dom/dist/angular-dom/index.html
 
 ### Vue.js
-https://ics-creative.github.io/160916_performance_js_framework/vue/dist/index.html
+https://ics-creative.github.io/160916_performance_js_framework/vue-dom/dist/index.html
