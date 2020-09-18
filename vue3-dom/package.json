@@ -1,0 +1,17 @@
+{
+  "name": "vue3-dom",
+  "version": "0.0.0",
+  "license": "MIT",
+  "homepage": ".",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.1",
+    "@vue/compiler-sfc": "^3.0.0-rc.1"
+  }
+}
