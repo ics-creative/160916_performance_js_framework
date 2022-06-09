@@ -1,31 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-dom": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -40,7 +25,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -52,41 +36,48 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "angular-dom:build"
-          },
           "configurations": {
             "production": {
               "browserTarget": "angular-dom:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-dom:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -110,33 +101,8 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-dom:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular-dom:serve:production"
-            }
-          }
         }
       }
-    }},
-  "defaultProject": "angular-dom"
+    }
+  }
 }

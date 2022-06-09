@@ -1,7 +1,7 @@
 <svg [attr.width]="innerWidth" [attr.height]="innerHeight">
   <svg:g app-particle
-    *ngFor="let particle of particles"
-    [particle]="particle"></svg:g>
+         *ngFor="let particle of particles"
+         [particle]="particle"></svg:g>
 </svg>
 <div class="ui">
   <p>Emit Particle Per 1 Frame</p>
@@ -12,5 +12,4 @@
          [(ngModel)]="emitOnFrame"
          min="1" max="50" />
   <p>現在のパーティクル数 : {{particles.length}} 個</p>
-
 </div>

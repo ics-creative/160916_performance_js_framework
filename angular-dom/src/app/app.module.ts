@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import {AppComponent, ParticleComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
@@ -7,11 +7,11 @@ import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ParticleComponent
+    ParticleComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -52,12 +52,12 @@ export class AppComponent implements OnInit {
 @Component({
   selector: 'app-particle',
   template: `
-    <div [style.top]="particle.y + 'px'" [style.left]="particle.x + 'px'">😊</div>`,
+    <div [style.top]="particle?.y + 'px'" [style.left]="particle?.x + 'px'">😊</div>`,
   styles: [`div {
     position: absolute;
     font-size: 2rem;
   }`],
 })
 export class ParticleComponent {
-  @Input() particle: ParticleData;
+  @Input() particle: ParticleData | undefined;
 }
