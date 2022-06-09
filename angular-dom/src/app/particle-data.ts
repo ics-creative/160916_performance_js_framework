@@ -8,7 +8,7 @@ export class ParticleData {
   vy = 0;
   life = 0;
 
-  constructor(public x, public y) {
+  constructor(public x: number, public y: number) {
     // 動的にプロパティーを追加します。
     // 速度
     this.vx = 30 * (Math.random() - 0.5);

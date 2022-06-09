@@ -11,5 +11,5 @@ export class ParticleComponent {
   constructor() {
   }
 
-  @Input() particle: ParticleData = null;
+  @Input() particle: ParticleData | undefined;
 }
